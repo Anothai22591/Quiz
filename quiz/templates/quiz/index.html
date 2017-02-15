@@ -1,0 +1,13 @@
+<h1>Select Quiz</h1>
+{% if group_list %}
+    <ul>
+    {% for group in group_list %}
+        <a href="/quiz/{{ group.id }}/">{{ group.group_text }}</a></br>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+
+
+

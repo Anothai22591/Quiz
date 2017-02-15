@@ -1,0 +1,12 @@
+<h1>{{ group.group_text }}</h1>
+
+{% for question in group.question_set.all %}
+    {{ question.question_text }}
+<ul>    
+{% for choice in question.choice_set.all %}
+    <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
+    <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br />
+    {% endfor %}
+</ul>
+{% endfor %}
+
